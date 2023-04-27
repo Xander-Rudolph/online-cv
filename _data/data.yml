@@ -33,17 +33,20 @@ sidebar:
           link:
 
         - item: Automation (CI/CD)
-          link:
+          link: https://resources.github.com/ci-cd/
 
         - item: AI/Machine Learning
-          link:
+          link: https://ai.engineering.columbia.edu/ai-vs-machine-learning/
+
+        - item: Infrastructure as code (IaC)
+          link: https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code
 
 career-profile:
     title: Career Profile
     summary: |
-      Problem solver with an aptitude for processes and systems. Optimization and
+      Collaborative problem solver with an aptitude for mentoring, processes and systems. Optimization and
       sustainability through automation using minimal costs. Anything can be
-      automated.
+      automated. 
 
 education:
     title: Education
@@ -57,12 +60,29 @@ education:
             - Business systems
             - Process automation
             - Data mining
+      - degree: Bachelors in Science in Technical Management
+        university: Southern New Hampshire University 
+        time: SEPTEMBER 2008 - OCTOBER 2009
+        details: |
+          Focusing in business process and optimization
+            - Process Improvement
+            - Query optimization
+
+      - degree: Associates in Science in Small Business Management
+        university: New Hampshire Community College
+        time: SEPTEMBER 2004 - MAY 2008
+        details: 
+
+      - degree: Associates in Science in Automotive Technology
+        university: New Hampshire Community College
+        time: SEPTEMBER 2004 - MAY 2008
+        details: 
 
 experiences:
     title: Experiences
     info:
       - role: Senior DevOps Engineer
-        time: April 2022 - Present
+        time: APRIL 2022 - Present
         company: Hanwha Techwin America, San Jose
         details: |
           Templatize open source pipelines in GitHub for asynchronous code scanning,
@@ -70,6 +90,71 @@ experiences:
           helm.
             - AWS multi tenant cloud 
             - MacOS shop
+            - Terraform
+            - Traefik k8s network
+            - GitHub Actions
+
+      - role: Senior DevOps Engineer
+        time: JANUARY 2021 - APRIL 2022
+        company: Motorola Solutions Inc, Boston
+        details: |
+          Build and deploy powershell modules to create SSRS server and grafana as an 
+          azure container. Design/implement security model for Azure AD and Azure SQL. 
+          Automate testing of federated authentication using graph api. Design/implement 
+          express route virtual network. Impliment/automate Federated authentication
+          using Azure B2C.
+            - Azure multi tenant cloud 
+            - Windows shop
+            - Terraform
+            - Azure DevOps pipelines
+
+      - role: DevOps Engineer
+        time: DECEMBER 2019 - JANUARY 2021
+        company: Sensitech, Beverly
+        details: |
+          Build/deploy and maintain Artifactory and Atlassian suite on Azure Ubuntu VMs 
+          with nginx docker and application storage in SMB mounts using terraform. Environments
+          could be spooled in 17 minutes in Azure VMs with previous day backups mounted to restore.
+            - Azure multi tenant cloud 
+            - Windows/Linux shop
+            - Terraform
+            - nginx
+            - TFS/VSTS pipelines
+
+      - role: Tech Lead
+        time: MARCH 2019 - DECEMBER 2019
+        company: MFS/Kaygen, Boston
+        details: |
+          Troubleshoot and debug production issues, assist development team with design 
+          and architecture, automate and build powershell and SQL automations for multiple 
+          teams to reduce workload.
+            - On-Prem virtualized environment
+            - Windows shop
+            - Powershell
+            - Internal Processing Server (bash/powershell)
+
+      - role: Senior Support Engineer
+        time: SEPTEMBER 2016 - FEBRUARY 2019
+        company: Simcorp, Boston
+        details: |
+          Troubleshoot and triage both on premise and Azure issues, automate application 
+          prerequisites and install using powershell runbooks. Automations validated and
+          configured IIS, SQL, and Windows Optional Features. Environment agnostic scripts. 
+            - Hybrid Azure/On-Prem
+            - Windows shop
+            - Powershell
+            - IIS
+
+      - role: Tech and Ops Analyst III
+        time: OCTOBER 2014 - SEPTEMBER 2016
+        company: Santander US, Dorchester 
+        details: |
+          Build and maintain .net and vb code for multiple business units, designed and
+          implemented automations for key bank processes. Standalone and Office integrated
+          vb apps to automatically solve and respond to requests.
+            - On-Prem hardware environment
+            - Windows shop
+            - Visual Basic/.net
 
 projects:
     title: Projects
@@ -82,12 +167,26 @@ projects:
         link: "https://github.com/Xander-Rudolph/Mediakube-redux"
         tagline: "Open Source kubernetes cluster for media"
 
+      - title: Xanderu Helpers
+        link: "https://www.powershellgallery.com/packages/xanderu.helpers/1.0.0"
+        tagline: "Open Source powershell pipeline creator"
+
+      - title: Hanwha Vision
+        link: "https://github.com/htaic"
+        tagline: "Enterprise repositories with Apache open source license for github actions and helm"
+
 skills:
     title: Skills &amp; Proficiency
 
     toolset:
       - name: Powershell
         level: 99%
+
+      - name: Windows
+        level: 99%
+
+      - name: CI/CD
+        level: 95%
 
       - name: Bash
         level: 95%
@@ -98,14 +197,33 @@ skills:
       - name: Helm
         level: 95%
 
+      - name: GitHub Actions
+        level: 95%
+
       - name: Docker
         level: 95%
+
+      - name: Terraform
+        level: 93%
+
+      - name: Automation (Jenkins, Azure Runbooks, Ansible, etc)
+        level: 93%
 
       - name: Azure
         level: 90%
 
+      - name: SQL
+        level: 80%
+
+      - name: Source Control (TFS/SVN/GIT)
+        level: 80%
+
+      - name: Reporting (SSRS, Grafana, Prometheus, PagerDuty)
+        level: 80%
+
       - name: AWS
         level: 60%
+
 
 footer: >
     Contact me via <a href="https://www.linkedin.com/in/alexrudolph">LinkedIn</a>
