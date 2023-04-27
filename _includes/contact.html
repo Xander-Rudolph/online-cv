@@ -15,7 +15,7 @@
 
     {% if sidebar.citizenship %}
     <li class="phone"><i class="fas fa-passport"></i>
-      <a href="{{ sidebar.citizenship.link }}">{{ sidebar.citizenship }}</a>
+      <a href="https://en.wikipedia.org/wiki/Birthright_citizenship_in_the_United_States">{{ sidebar.citizenship }}</a>
     </li>
     {% endif %}
 
@@ -88,6 +88,12 @@
     {% if sidebar.goodreads %}
     <li class="goodreads-g"><i class="fab fa-goodreads-g"></i>
       <a href="https://www.goodreads.com/user/show/{{ sidebar.goodreads }}" target="_blank">{{ sidebar.goodreads }}</a>
+    </li>
+    {% endif %}
+
+    {% if sidebar.discord %}
+    <li class="discord"><i class="fa-brands fa-discord"></i>
+      <a href="{{ sidebar.discord}}" target="_blank">Discord</a>
     </li>
     {% endif %}
 

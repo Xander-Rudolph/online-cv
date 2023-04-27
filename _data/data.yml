@@ -14,11 +14,11 @@ sidebar:
     # Sidebar links
     timezone: PST
     citizenship: US Citizen
-      link: https://en.wikipedia.org/wiki/Birthright_citizenship_in_the_United_States
     website: xanderu.duckdns.org #do not add http://
     linkedin: alexrudolph
     github: Xander-Rudolph
     stack-overflow: 835448/xanderu
+    discord: https://discord.gg/dFM25yNk
     pdf: ./print
 
     languages:
