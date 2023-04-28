@@ -26,7 +26,7 @@
     {% endif %}
 
     {% if sidebar.location %}
-    <li class="location"><i class="fas fa-clock"></i>
+    <li class="location"><i class="fas fa-map-pin"></i>
       <a href="https://time.is/{{ sidebar.location }}" target="_blank">{{ sidebar.location }}</a>
     </li>
     {% endif %}
@@ -98,7 +98,8 @@
     {% endif %}
 
     {% if sidebar.discord %}
-    <li class="comments"><i class="fas fa-comments"></i>
+    <li class="comments"><i class="fa-brands fa-discord"></i>
+    <!-- <li class="comments"><i class="fas fa-comments"></i> -->
       <a href="{{ sidebar.discord}}" target="_blank">Discord</a>
     </li>
     {% endif %}
