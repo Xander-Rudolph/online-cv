@@ -21,7 +21,13 @@
 
     {% if sidebar.timezone %}
     <li class="timezone"><i class="fas fa-clock"></i>
-      <a href="https://www.bing.com/search?q={{ sidebar.timezone }}+time+now" target="_blank">{{ sidebar.timezone }}</a>
+      <a href="https://time.is/{{ sidebar.timezone }}" target="_blank">{{ sidebar.timezone }}</a>
+    </li>
+    {% endif %}
+
+    {% if sidebar.location %}
+    <li class="location"><i class="fas fa-map-pin"></i>
+      <a href="https://time.is/{{ sidebar.location }}" target="_blank">  {{ sidebar.location }}</a>
     </li>
     {% endif %}
 
@@ -88,12 +94,6 @@
     {% if sidebar.goodreads %}
     <li class="goodreads-g"><i class="fab fa-goodreads-g"></i>
       <a href="https://www.goodreads.com/user/show/{{ sidebar.goodreads }}" target="_blank">{{ sidebar.goodreads }}</a>
-    </li>
-    {% endif %}
-
-    {% if sidebar.discord %}
-    <li class="comments"><i class="fas fa-comments"></i>
-      <a href="{{ sidebar.discord}}" target="_blank">Discord</a>
     </li>
     {% endif %}
 
