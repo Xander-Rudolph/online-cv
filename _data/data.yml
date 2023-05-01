@@ -87,9 +87,13 @@ experiences:
         time: APRIL 2022 - Present
         company: Hanwha Techwin America, San Jose
         details: |
-          Templatize open source pipelines in GitHub for asynchronous code scanning,
-          auditing, and environment deployment and scalability using K8S, K3S and
-          helm.
+          One of the founding members. Defined the multi-tenant cloud environment,
+          including security and account structure. Trained teams on Agile methodologies
+          with a 3 day interactive seminar. Managed relationships with multiple teams as
+          well as act as scrum master and scrum of scrum master. Established/enforced coding
+          standards for quality and vulnerabilities. Created open source pipelines and
+          templatize pipelines in GitHub for asynchronous code scanning, auditing, and 
+          environment deployment and scalability using K8S, K3S and helm.
             - AWS multi tenant cloud 
             - MacOS shop
             - Terraform
