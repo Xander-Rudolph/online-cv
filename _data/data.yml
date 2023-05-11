@@ -189,9 +189,6 @@ skills:
     title: Skills &amp; Proficiency
 
     toolset:
-      - name: Powershell
-        level: 99%
-
       - name: Windows
         level: 99%
 
@@ -219,17 +216,17 @@ skills:
       - name: Automation (Jenkins, Azure Runbooks, Ansible, etc)
         level: 93%
 
-      - name: Linux (Alpine, Debian, Ubuntu, Raspian)
+      - name: Azure
         level: 90%
 
-      - name: Azure
+      - name: Linux (Alpine, Debian, Ubuntu, Raspian)
         level: 90%
 
       - name: Atlassian Suite (On-prem and cloud)
         level: 90%
 
-      - name: SQL (MSSql, postgres, MySql, sqlite, DB2, etc)
-        level: 80%
+      - name: SQL (postgres/RDS, MSSQL/Serverless AzSql)
+        level: 85%
 
       - name: Source Control (TFS/SVN/GIT)
         level: 80%
@@ -247,9 +244,6 @@ languages:
       - name: Powershell
         level: 99%
 
-      - name: Bash (bash, sh, zsh)
-        level: 95%
-
       - name: Helm
         level: 95%
 
@@ -259,8 +253,26 @@ languages:
       - name: Terraform
         level: 93%
 
+      - name: Bash (bash, sh, zsh)
+        level: 90%
+
+      - name: CLI (Azure/AWS)
+        level: 90%
+
       - name: SQL (MSSql, postgres, MySql, sqlite, DB2, etc)
         level: 80%
+
+      - name: Python
+        level: 60%
+
+      - name: Node/typescript/yarn
+        level: 60%
+
+      - name: .net
+        level: 60%
+
+      - name: C#
+        level: 60%
 
 footer: >
     Contact me via <a href="https://www.linkedin.com/in/alexrudolph">LinkedIn</a>
