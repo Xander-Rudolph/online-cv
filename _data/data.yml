@@ -46,9 +46,12 @@ sidebar:
 career-profile:
     title: Career Profile
     summary: |
-      Collaborative problem solver with an aptitude for mentoring, processes and systems. Optimization and
-      sustainability through automation using minimal costs. Anything can be
-      automated. 
+      Kubernetes, Docker, and Helm expert with a strong aptitude for mentoring, processes, and
+      systems while using collaborative problem solving. Proven track record of optimizing and 
+      sustaining systems through automation, using minimal costs. Anything can be automated. 
+      Skilled in delivering automation solutions that drive productivity and innovation. Experience 
+      in Azure and AWS, cloud/edge/programming language agnostic, and able streamline complex 
+      deployment processes while troubleshooting issues.
 
 education:
     title: Education
@@ -138,6 +141,7 @@ experiences:
             - Windows shop
             - Powershell
             - Internal Processing Server (bash/powershell)
+            - Maestro 
 
       - role: Senior Support Engineer
         time: SEPTEMBER 2016 - FEBRUARY 2019
@@ -215,10 +219,16 @@ skills:
       - name: Automation (Jenkins, Azure Runbooks, Ansible, etc)
         level: 93%
 
+      - name: Linux (Alpine, Debian, Ubuntu, Raspian)
+        level: 90%
+
       - name: Azure
         level: 90%
 
-      - name: SQL
+      - name: Atlassian Suite (On-prem and cloud)
+        level: 90%
+
+      - name: SQL (MSSql, postgres, MySql, sqlite, DB2, etc)
         level: 80%
 
       - name: Source Control (TFS/SVN/GIT)
@@ -230,6 +240,27 @@ skills:
       - name: AWS
         level: 60%
 
+languages:
+    title: Languages &amp; Proficiency
+
+    toolset:
+      - name: Powershell
+        level: 99%
+
+      - name: Bash (bash, sh, zsh)
+        level: 95%
+
+      - name: Helm
+        level: 95%
+
+      - name: Docker
+        level: 95%
+
+      - name: Terraform
+        level: 93%
+
+      - name: SQL (MSSql, postgres, MySql, sqlite, DB2, etc)
+        level: 80%
 
 footer: >
     Contact me via <a href="https://www.linkedin.com/in/alexrudolph">LinkedIn</a>
