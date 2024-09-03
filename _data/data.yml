@@ -87,7 +87,20 @@ experiences:
     title: Experiences
     info:
       - role: Senior DevOps Engineer
-        time: APRIL 2022 - Present
+        time: JUNE 2023 - Present
+        company: FaceFirst
+        details: |
+          Build automations and pipeline tools for builds. Created standards and
+          globalizations for pipelines to detect the makeup of a repository and build
+          using best practices for the language. Support poly/mono repos and a migration
+          off of submodules into nuget packages.
+            - Windows shop
+            - Terraform
+            - On-prem deployments
+            - GitHub Actions
+            
+      - role: Senior DevOps Engineer
+        time: APRIL 2022 - FEBRUARY 2023
         company: Hanwha Techwin America, San Jose
         details: |
           One of the founding members. Defined the multi-tenant cloud environment,
