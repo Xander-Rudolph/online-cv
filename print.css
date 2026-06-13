@@ -2,32 +2,44 @@
    data-print="ink"  → printer-friendly (ink-saver, light sidebar)
    data-print="full" → Enhanced (full color, links stay clickable) */
 @media print {
-  @page { size: Letter portrait; margin: 13mm 11mm; }
+  @page { size: Letter portrait; margin: 10mm 10mm; }
   html, body { background: #fff !important; }
-  body { font-size: 10.5pt; }
+  body { font-size: 9.5pt; }
 
-  /* hide app chrome */
+  /* hide app chrome + live clock (useless / space-wasting in PDF) */
   .topbar, .cmdk-backdrop, .twk-panel, [data-omelette-chrome],
-  .exp-expand, .filters, .status-dot, .section-rule { display: none !important; }
+  .exp-expand, .filters, .status-dot, .section-rule,
+  .clock-card { display: none !important; }
 
   /* keep accent colors on paper */
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-  /* shell flattens, sidebar stays as a column */
+  /* shell: narrower sidebar so content has room */
   .resume-shell {
     margin: 0 !important; max-width: 100% !important;
     border: none !important; border-radius: 0 !important; box-shadow: none !important;
-    grid-template-columns: 33% 1fr !important;
+    grid-template-columns: 27% 1fr !important;
   }
-  .main { padding: 4mm 0 0 8mm !important; }
-  .section { margin-bottom: 7mm !important; break-inside: avoid; }
+  /* tighten sidebar padding */
+  .s-section { padding: 12px 16px !important; }
+  .profile-block { padding: 16px !important; }
+
+  .main { padding: 3mm 0 0 6mm !important; }
+  .section { margin-bottom: 5mm !important; break-inside: avoid; }
   .exp, .proj, .ring-item, .sk-bucket, .skill { break-inside: avoid; }
 
   /* show ALL experiences, expanded, regardless of the on-screen filter */
   .exp.hidden { display: block !important; }
   .exp-body { max-height: none !important; }
-  .exp-card { cursor: default; box-shadow: none !important; }
-  .timeline { padding-left: 22px; }
+  .exp-card { cursor: default; box-shadow: none !important; padding: 8px 10px !important; }
+  .timeline { padding-left: 18px; }
+  .exp-desc { font-size: 8.5pt !important; }
+  .tag { font-size: 7.5pt !important; padding: 2px 6px !important; }
+
+  /* proj grid single col in print so cards don't get tiny */
+  .proj-grid { grid-template-columns: 1fr 1fr !important; gap: 6px !important; }
+  .proj { padding: 6px 8px !important; }
+  .proj-ico { width: 28px !important; height: 28px !important; font-size: 12px !important; }
 
   /* ---------- INK-SAVER ---------- */
   [data-print="ink"] .sidebar { background: #fff !important; color: #111 !important; border-right: 1px solid #ccc; }
