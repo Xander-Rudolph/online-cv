@@ -210,6 +210,7 @@ window.RESUME = {
   education: [
     { degree: "MBA, Information Systems", school: "Southern New Hampshire University", time: "2010 — 2011" },
     { degree: "BS, Technical Management", school: "Southern New Hampshire University", time: "2008 — 2009" },
+    { degree: "AS, Automotive Technology", school: "New Hampshire Community College", time: "2004 — 2008" },
     { degree: "AS, Small Business Management", school: "New Hampshire Community College", time: "2004 — 2008" }
   ],
 
