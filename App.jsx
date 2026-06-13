@@ -158,6 +158,10 @@ function App() {
     window.printResume = (mode) => {
       const m = mode || "full";
       document.documentElement.setAttribute("data-print", m);
+      // hide PDF sidebar links — useless in any printed/exported document
+      document.querySelectorAll(".contact-list li.pdf").forEach((el) => {
+        el.style.setProperty("display", "none", "important");
+      });
       // fill skill bars / rings in case the user hasn't scrolled them into view yet
       document.querySelectorAll(".sk-fill").forEach((f) => {
         if (f.dataset.level) f.style.width = f.dataset.level + "%";
@@ -207,6 +211,9 @@ function App() {
     };
     const after = () => {
       document.documentElement.removeAttribute("data-print");
+      document.querySelectorAll(".contact-list li.pdf").forEach((el) => {
+        el.style.removeProperty("display");
+      });
       const s = window.__printStyleTag;
       if (s) { s.remove(); window.__printStyleTag = null; }
     };
