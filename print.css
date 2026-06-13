@@ -1,6 +1,7 @@
 /* print.css — PDF export.
-   data-print="ink"  → printer-friendly (ink-saver, light sidebar)
-   data-print="full" → Enhanced (full color, links stay clickable) */
+   data-print="ink"    → printer-friendly (ink-saver, light sidebar)
+   data-print="full"   → Enhanced paginated (full color, links stay clickable)
+   data-print="single" → Single-page PDF (8.5in wide, height auto — one tall page) */
 @media print {
   @page { size: Letter portrait; margin: 10mm 10mm; }
   html, body { background: #fff !important; }
@@ -59,4 +60,13 @@
   [data-print="ink"] .ring { background: conic-gradient(#333 calc(var(--p,0)*1%), #ddd 0) !important; }
   [data-print="ink"] .tag, [data-print="ink"] .sk-chip.tier-0 { background: #f0f0f0 !important; color: #222 !important; border-color: #ddd !important; }
   [data-print="ink"] .summary .hl { background: none !important; padding: 0 !important; }
+
+  /* ---------- SINGLE-PAGE ---------- */
+  /* break overrides applied when data-print="single" — @page size injected via JS */
+  [data-print="single"] .section,
+  [data-print="single"] .exp,
+  [data-print="single"] .proj,
+  [data-print="single"] .ring-item,
+  [data-print="single"] .sk-bucket,
+  [data-print="single"] .skill { break-inside: auto !important; break-before: auto !important; break-after: auto !important; }
 }

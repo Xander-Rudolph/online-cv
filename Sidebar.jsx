@@ -46,6 +46,9 @@ function ContactList({ d }) {
       <li className="pdf"><i className="fas fa-file-lines"></i>
         <a href="#" title="Opens your print dialog — a full-color PDF with every company, project & contact kept as a clickable link"
            onClick={(e) => { e.preventDefault(); window.printResume && window.printResume("full"); }}>Enhanced PDF</a></li>
+      <li className="pdf"><i className="fas fa-file-export"></i>
+        <a href="#" title="Single tall page — 8.5in wide, auto height, no page breaks"
+           onClick={(e) => { e.preventDefault(); window.printResume && window.printResume("single"); }}>Single-page PDF</a></li>
     </ul>
   );
 }
