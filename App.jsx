@@ -41,6 +41,7 @@ function CommandPalette({ d, onClose, toggleTheme }) {
       { group: "Actions", icon: "fa-circle-half-stroke", label: "Toggle dark / light theme", sub: "theme", run: () => { toggleTheme(); } },
       { group: "Actions", icon: "fa-print", label: "Printer-friendly PDF (ink-saver)", sub: "print", run: () => { onClose(); setTimeout(() => window.printResume("ink"), 60); } },
       { group: "Actions", icon: "fa-file-lines", label: "Enhanced PDF (full color + links)", sub: "⌘P", run: () => { onClose(); setTimeout(() => window.printResume("full"), 60); } },
+      { group: "Actions", icon: "fa-file-export", label: "Single-page PDF (one tall page)", sub: "single", run: () => { onClose(); setTimeout(() => window.printResume("single"), 60); } },
     ];
     const links = [
       { group: "Links", icon: "fa-brands fa-linkedin", label: "LinkedIn", sub: "alexrudolph", run: () => open(d.links.linkedin) },
@@ -151,10 +152,12 @@ function App() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  // PDF / print engine: 'ink' = printer-friendly B&W-leaning, 'full' = Enhanced full-color.
+  // PDF / print engine: 'ink' = printer-friendly B&W-leaning, 'full' = Enhanced full-color,
+  // 'single' = one tall page (8.5in wide, auto height).
   useE(() => {
     window.printResume = (mode) => {
-      document.documentElement.setAttribute("data-print", mode || "full");
+      const m = mode || "full";
+      document.documentElement.setAttribute("data-print", m);
       // fill skill bars / rings in case the user hasn't scrolled them into view yet
       document.querySelectorAll(".sk-fill").forEach((f) => {
         if (f.dataset.level) f.style.width = f.dataset.level + "%";
@@ -162,9 +165,51 @@ function App() {
       document.querySelectorAll(".ring").forEach((r) => {
         if (r.dataset.level) r.style.setProperty("--p", r.dataset.level);
       });
-      window.print();
+      // single-page mode: data-print="single" (set above) applies the full print layout
+      // on-screen via print.css selectors, so scrollHeight here reflects the true print
+      // height. Measure after two rAFs (layout settle), inject a matching @page, then print.
+      let styleTag = null;
+      if (m === "single") {
+        // Constrain the shell to the actual print content width (8.5in - 2×10mm margins ≈ 740px)
+        // so text reflows the same way it will when printed, then measure the footer's bottom.
+        // Constrain to print width so text reflows identically to print layout.
+        // Must use setProperty('important') because the CSS has max-width: 100% !important.
+        const shell = document.querySelector(".resume-shell");
+        if (shell) shell.style.setProperty("max-width", "740px", "important");
+
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          const footer = document.querySelector(".kit-footer");
+          const contentBottom = footer
+            ? footer.getBoundingClientRect().bottom + window.scrollY
+            : document.documentElement.scrollHeight;
+          // Chrome scales content from bodyWidth → 8.5in page width.
+          // Scale factor ≈ 816 / body.scrollWidth, so actual printed height
+          // is contentBottom * scale. Using 6in buffer reliably covers the
+          // scale-adjusted height. Bare @page (no @media wrapper) is required —
+          // @media print wrapper conflicts with print.css's own @page rule.
+          const scale = 816 / (document.body.scrollWidth || 816);
+          const printedH = contentBottom * scale / 96; // in inches
+          const heightIn = (printedH + 6).toFixed(2);
+
+          if (shell) shell.style.removeProperty("max-width");
+
+          styleTag = document.createElement("style");
+          styleTag.id = "__single-page-print__";
+          styleTag.textContent = `@page { size: 8.5in ${heightIn}in; margin: 10mm; }`;
+          document.head.appendChild(styleTag);
+          window.__printStyleTag = styleTag;
+          setTimeout(() => window.print(), 80);
+        }));
+      } else {
+        window.__printStyleTag = null;
+        window.print();
+      }
     };
-    const after = () => document.documentElement.removeAttribute("data-print");
+    const after = () => {
+      document.documentElement.removeAttribute("data-print");
+      const s = window.__printStyleTag;
+      if (s) { s.remove(); window.__printStyleTag = null; }
+    };
     window.addEventListener("afterprint", after);
     return () => window.removeEventListener("afterprint", after);
   }, []);
