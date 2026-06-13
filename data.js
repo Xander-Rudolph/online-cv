@@ -217,7 +217,7 @@ window.RESUME = {
   interests: [
     { item: "DevOps", link: "" },
     { item: "Automation (CI/CD)", link: "https://resources.github.com/ci-cd/" },
-    { item: "AI / Machine Learning", link: "https://ai.engineering.columbia.edu/ai-vs-machine-learning/" },
+    { item: "AI / Machine Learning", link: "https://www.ibm.com/think/topics/ai-vs-machine-learning-vs-deep-learning-vs-neural-networks" },
     { item: "Infrastructure as Code", link: "https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code" }
   ],
 
