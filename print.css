@@ -7,7 +7,7 @@
   html, body { background: #fff !important; }
   body { font-size: 9.5pt; }
 
-  /* hide app chrome + live clock (useless / space-wasting in PDF) */
+  /* hide app chrome + live clock */
   .topbar, .cmdk-backdrop, .twk-panel, [data-omelette-chrome],
   .exp-expand, .filters, .status-dot, .section-rule,
   .clock-card { display: none !important; }
@@ -73,6 +73,9 @@
 /* Single-page layout rules applied ON-SCREEN when data-print="single" is set so that
    JS can measure the true print-mode height before injecting the @page size. */
 html[data-print="single"] body { font-size: 9.5pt !important; }
+/* PDF sidebar links are useless in any printed/exported document */
+html[data-print] .contact-list li.pdf { display: none !important; }
+
 html[data-print="single"] .topbar,
 html[data-print="single"] .cmdk-backdrop,
 html[data-print="single"] .twk-panel,
@@ -80,7 +83,8 @@ html[data-print="single"] .exp-expand,
 html[data-print="single"] .filters,
 html[data-print="single"] .status-dot,
 html[data-print="single"] .section-rule,
-html[data-print="single"] .clock-card { display: none !important; }
+html[data-print="single"] .clock-card,
+html[data-print="single"] .contact-list li.pdf { display: none !important; }
 html[data-print="single"] .resume-shell {
   margin: 0 !important; max-width: 100% !important;
   border: none !important; border-radius: 0 !important; box-shadow: none !important;
