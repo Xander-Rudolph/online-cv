@@ -62,7 +62,6 @@
   [data-print="ink"] .summary .hl { background: none !important; padding: 0 !important; }
 
   /* ---------- SINGLE-PAGE ---------- */
-  /* break overrides applied when data-print="single" — @page size injected via JS */
   [data-print="single"] .section,
   [data-print="single"] .exp,
   [data-print="single"] .proj,
@@ -70,3 +69,32 @@
   [data-print="single"] .sk-bucket,
   [data-print="single"] .skill { break-inside: auto !important; break-before: auto !important; break-after: auto !important; }
 }
+
+/* Single-page layout rules applied ON-SCREEN when data-print="single" is set so that
+   JS can measure the true print-mode height before injecting the @page size. */
+html[data-print="single"] body { font-size: 9.5pt !important; }
+html[data-print="single"] .topbar,
+html[data-print="single"] .cmdk-backdrop,
+html[data-print="single"] .twk-panel,
+html[data-print="single"] .exp-expand,
+html[data-print="single"] .filters,
+html[data-print="single"] .status-dot,
+html[data-print="single"] .section-rule,
+html[data-print="single"] .clock-card { display: none !important; }
+html[data-print="single"] .resume-shell {
+  margin: 0 !important; max-width: 100% !important;
+  border: none !important; border-radius: 0 !important; box-shadow: none !important;
+  grid-template-columns: 27% 1fr !important;
+}
+html[data-print="single"] .s-section { padding: 12px 16px !important; }
+html[data-print="single"] .profile-block { padding: 16px !important; }
+html[data-print="single"] .main { padding: 3mm 0 0 6mm !important; }
+html[data-print="single"] .section { margin-bottom: 5mm !important; }
+html[data-print="single"] .exp.hidden { display: block !important; }
+html[data-print="single"] .exp-body { max-height: none !important; }
+html[data-print="single"] .exp-card { padding: 8px 10px !important; }
+html[data-print="single"] .exp-desc { font-size: 8.5pt !important; }
+html[data-print="single"] .tag { font-size: 7.5pt !important; padding: 2px 6px !important; }
+html[data-print="single"] .proj-grid { grid-template-columns: 1fr 1fr !important; gap: 6px !important; }
+html[data-print="single"] .proj { padding: 6px 8px !important; }
+html[data-print="single"] .proj-ico { width: 28px !important; height: 28px !important; }

@@ -165,18 +165,41 @@ function App() {
       document.querySelectorAll(".ring").forEach((r) => {
         if (r.dataset.level) r.style.setProperty("--p", r.dataset.level);
       });
-      // single-page mode: inject a @page rule with a very large explicit height so
-      // the browser produces one continuous tall page instead of paginating.
-      // setTimeout gives the browser one tick to parse the @page rule before printing.
+      // single-page mode: data-print="single" (set above) applies the full print layout
+      // on-screen via print.css selectors, so scrollHeight here reflects the true print
+      // height. Measure after two rAFs (layout settle), inject a matching @page, then print.
       let styleTag = null;
       if (m === "single") {
-        styleTag = document.createElement("style");
-        styleTag.id = "__single-page-print__";
-        // 8.5in wide, 200in tall — far more than any CV will ever need
-        styleTag.textContent = "@page { size: 8.5in 200in; margin: 10mm; }";
-        document.head.appendChild(styleTag);
-        window.__printStyleTag = styleTag;
-        setTimeout(() => window.print(), 80);
+        // Constrain the shell to the actual print content width (8.5in - 2×10mm margins ≈ 740px)
+        // so text reflows the same way it will when printed, then measure the footer's bottom.
+        // Constrain to print width so text reflows identically to print layout.
+        // Must use setProperty('important') because the CSS has max-width: 100% !important.
+        const shell = document.querySelector(".resume-shell");
+        if (shell) shell.style.setProperty("max-width", "740px", "important");
+
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          const footer = document.querySelector(".kit-footer");
+          const contentBottom = footer
+            ? footer.getBoundingClientRect().bottom + window.scrollY
+            : document.documentElement.scrollHeight;
+          // Chrome scales content from bodyWidth → 8.5in page width.
+          // Scale factor ≈ 816 / body.scrollWidth, so actual printed height
+          // is contentBottom * scale. Using 6in buffer reliably covers the
+          // scale-adjusted height. Bare @page (no @media wrapper) is required —
+          // @media print wrapper conflicts with print.css's own @page rule.
+          const scale = 816 / (document.body.scrollWidth || 816);
+          const printedH = contentBottom * scale / 96; // in inches
+          const heightIn = (printedH + 6).toFixed(2);
+
+          if (shell) shell.style.removeProperty("max-width");
+
+          styleTag = document.createElement("style");
+          styleTag.id = "__single-page-print__";
+          styleTag.textContent = `@page { size: 8.5in ${heightIn}in; margin: 10mm; }`;
+          document.head.appendChild(styleTag);
+          window.__printStyleTag = styleTag;
+          setTimeout(() => window.print(), 80);
+        }));
       } else {
         window.__printStyleTag = null;
         window.print();
