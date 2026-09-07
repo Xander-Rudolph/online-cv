@@ -194,6 +194,10 @@ projects:
         link: "https://www.powershellgallery.com/packages/xanderu.helpers/1.0.0"
         tagline: "Open Source powershell pipeline creator"
 
+      - title: Athanor
+        link: "https://play.athanor.games"
+        tagline: "Browser strategy game of alchemical guilds, heroes, and the Great Work"
+
       - title: Hanwha Vision
         link: "https://github.com/htaic"
         tagline: "Enterprise repositories with Apache open source license for github actions and helm"
