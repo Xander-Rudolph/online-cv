@@ -128,6 +128,12 @@ window.RESUME = {
       icon: "fa-building"
     },
     {
+      title: "Athanor",
+      link: "https://play.athanor.games",
+      tagline: "Browser strategy game of alchemical guilds, heroes, and the Great Work — Flutter web, CI/CD deployed",
+      icon: "fa-flask-vial"
+    },
+    {
       title: "Mossworks Labs",
       link: "https://github.com/Mossworks-Labs",
       tagline: "Open-source MCP servers & infrastructure for AI-assisted content production",
