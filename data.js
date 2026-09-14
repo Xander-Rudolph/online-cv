@@ -134,6 +134,13 @@ window.RESUME = {
       icon: "fa-flask-vial"
     },
     {
+      title: "Game Asset Engine",
+      link: "https://alex.rudolphhome.com/game-asset-engine/",
+      tagline: "Open-source MCP server for AI-assisted asset production",
+      icon: "fa-creative-commons"
+    }
+    },
+    {
       title: "Mossworks Labs",
       link: "https://github.com/Mossworks-Labs",
       tagline: "Open-source MCP servers & infrastructure for AI-assisted content production",
