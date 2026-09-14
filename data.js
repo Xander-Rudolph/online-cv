@@ -1,6 +1,6 @@
-/* Alex Rudolph — resume content, lifted from
-   github.com/Xander-Rudolph/online-cv/_data/data.yml
-   and lightly tightened for the modern card layout. */
+/* Alex Rudolph — resume content. This file is the single source of truth:
+   index.html loads it and the React components (Main.jsx, Sidebar.jsx, App.jsx)
+   render every section, including the PDF/print modes. */
 window.RESUME = {
   name: "Alex Rudolph",
   tagline: "Senior DevOps Engineer",
@@ -137,8 +137,7 @@ window.RESUME = {
       title: "Game Asset Engine",
       link: "https://alex.rudolphhome.com/game-asset-engine/",
       tagline: "Open-source MCP server for AI-assisted asset production",
-      icon: "fa-creative-commons"
-    }
+      icon: "fa-shapes"
     },
     {
       title: "Mossworks Labs",
